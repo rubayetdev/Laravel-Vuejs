@@ -15,13 +15,27 @@ class ItemController extends Controller
     public function store(Request $request)
     {
 
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
+//        $validatedData = $request->validate([
+//            'name' => 'required|string|max:255',
+//        ]);
+
+        $name = $request->input('name');
+
+
+        $item = Item::create([
+           'name'=> $name,
         ]);
 
+        return response()->json(['success' => true, 'item' => $item], 200);
+    }
 
-        $item = Item::create($validatedData);
+    public function show($id)
+    {
+        $item = Item::where('id', $id)->first();
 
+        if (!$item){
+            return response()->json(['success' => false, 'message' => 'Item not found'], 404);
+        }
         return response()->json(['success' => true, 'item' => $item], 200);
     }
 

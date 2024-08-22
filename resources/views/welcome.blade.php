@@ -1,3 +1,4 @@
+{{--welcome.blade.php--}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +7,11 @@
     <title>Laravel Vue CRUD</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    @vite(['resources/js/app.js', 'resources/css/app.css'])
+    @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100">
 <div id="app">
+    @vite('resources/js/app.js')
     <crud-component></crud-component>
 </div>
 <script src="{{ mix('js/app.js') }}"></script>

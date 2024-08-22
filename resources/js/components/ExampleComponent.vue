@@ -1,17 +1,17 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
+    <div class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-md">
+        <div class="bg-white shadow-md rounded-lg">
+            <div class="bg-gray-800 text-white text-lg font-semibold p-4 rounded-t-lg">
+                404 | Not Found
+            </div>
+            <div class="p-6">
+                <router-link to="/" class="text-blue-500 hover:underline">Go to Home Page</router-link>
             </div>
         </div>
     </div>
+</div>
+
 </template>
 
 <script>

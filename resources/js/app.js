@@ -1,25 +1,27 @@
-
-
 import './bootstrap';
 import { createApp } from 'vue';
 import Toaster from "@meforma/vue-toaster";
+import CrudComponent from './components/navComponent.vue';
+// import DataComponent from './components/DataShow.vue';
+import router from "@/router";
 
 
-// import router from '@/router';
 
 const app = createApp({});
 
-import CrudComponent from './components/CrudComponent.vue';
-import DataShow from './components/DataShow.vue';
+
+
+
 app.component('crud-component', CrudComponent);
-app.component('data-component', DataShow);
+// app.component('data-component', DataComponent);
 
 
 
 
 
-app.mount('#app');
+
 app.use(Toaster, {
     position: "top-right",
 });
 app.use(router);
+app.mount('#app');
