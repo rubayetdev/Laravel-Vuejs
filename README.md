@@ -121,12 +121,12 @@ npm run dev
 └── webpack.mix.js          # Laravel Mix configuration file for asset compilation
 
 ## Features
-Laravel Backend: Utilize Laravel for backend logic, routing, and data management.
-Vue.js Frontend: Build dynamic user interfaces with Vue.js components.
-Authentication: Basic user authentication and registration features.
-CRUD Operations: Fully functional Create, Read, Update, Delete operations.
-Responsive Design: Mobile-first, responsive design using Tailwind CSS.
-API Endpoints: RESTful API routes for AJAX requests.
+* Laravel Backend: Utilize Laravel for backend logic, routing, and data management.
+* Vue.js Frontend: Build dynamic user interfaces with Vue.js components.
+* Authentication: Basic user authentication and registration features.
+* CRUD Operations: Fully functional Create, Read, Update, Delete operations.
+* Responsive Design: Mobile-first, responsive design using Tailwind CSS.
+* API Endpoints: RESTful API routes for AJAX requests.
 
 ## Contributing
 Contributions are welcome! If you want to contribute to this project, please fork the repository and submit a pull request.
