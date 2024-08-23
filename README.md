@@ -21,12 +21,13 @@ First, clone this repository to your local machine using Git:
 
 ```bash
 git clone https://github.com/your-username/your-repository.git
-`````bash
+
 cd your-repository
 
 
 ### Install Laravel Dependencies
 Install the required Laravel dependencies using Composer:
+```bash
 composer install
 
 
