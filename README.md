@@ -21,7 +21,7 @@ First, clone this repository to your local machine using Git:
 
 ```bash
 git clone https://github.com/your-username/your-repository.git
-```bash
+`````bash
 cd your-repository
 
 
