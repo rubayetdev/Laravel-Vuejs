@@ -133,4 +133,6 @@ Contributions are welcome! If you want to contribute to this project, please for
 
 ## License
 This project is open-source and licensed under the MIT License.
+```bash
 Author: Sheikh Md. Rubayet Islam Ifti
+```
