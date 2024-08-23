@@ -16,7 +16,7 @@ This project is a web application built using Laravel and Vue.js, leveraging Lar
 
 ## Installation
 
-### 1. Clone the Repository
+### Clone the Repository
 First, clone this repository to your local machine using Git:
 
 ```bash
@@ -25,26 +25,34 @@ git clone https://github.com/your-username/your-repository.git
 cd your-repository
 
 
-### 1. Install Laravel Dependencies
+### Install Laravel Dependencies
 Install the required Laravel dependencies using Composer:
 
 ```bash
 composer install
+```
 
 
 ### Install NPM Dependencies
 Install the required Node.js dependencies:
+```bash
 npm install
+```
 
 ## Configuration
 ### Environment Setup
 Copy the .env.example file to create your .env file:
+```bash
 cp .env.example .env
+```
 ### Generate Application Key
 Generate an application key, which is used for various encryption services:
+```bash
 php artisan key:generate
+```
 ### Set Up Environment Variables
 Open the .env file and configure your environment variables, such as database settings, mail configuration, and other services. Here's an example configuration:
+```bash
 APP_NAME="Laravel Vue App"
 APP_ENV=local
 APP_KEY=base64:your-generated-key
@@ -57,6 +65,7 @@ DB_PORT=3306
 DB_DATABASE=your_database_name
 DB_USERNAME=your_database_user
 DB_PASSWORD=your_database_password
+```
 
 # Add your other environment variables here
 
@@ -64,25 +73,39 @@ DB_PASSWORD=your_database_password
 
 ### Create the Database
 Create a new MySQL database for your application:
+```bash
 CREATE DATABASE your_database_name;
+```
 
 ### Run Migrations
 Migrate the database to create the required tables:
+```bash
 php artisan migrate
+```
 
 ## Frontend Setup
 ### Compile Assets
 Compile the frontend assets, including JavaScript and CSS:
+```bash
 npm run dev
+```
 
 ### Vue.js Integration
 This project is set up with Vue.js. You can find Vue components in the resources/js/components directory. To add a new component, create a .vue file in this directory, and reference it in your resources/js/app.js file.
+```bash
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+```
 
 ## Running the Application
 ### Start the Development Server
 To start the Laravel development server, run:
+```bash
 php artisan serve
+```
+To start the Vue Js development server, run:
+```bash
+npm run dev
+```
 
 ## File Structure
 
