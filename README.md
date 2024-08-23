@@ -108,7 +108,7 @@ npm run dev
 ```
 
 ## File Structure
-
+```bash
 ├── app/                    # Application logic and models
 ├── bootstrap/              # Bootstrap framework files
 ├── config/                 # Configuration files
@@ -119,7 +119,7 @@ npm run dev
 ├── storage/                # Logs, cache, compiled Blade templates
 ├── tests/                  # Automated tests
 └── webpack.mix.js          # Laravel Mix configuration file for asset compilation
-
+```
 ## Features
 * Laravel Backend: Utilize Laravel for backend logic, routing, and data management.
 * Vue.js Frontend: Build dynamic user interfaces with Vue.js components.
