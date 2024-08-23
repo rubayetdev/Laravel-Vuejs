@@ -9,6 +9,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Route::get('/login', function () {
+//    return view('login');
+//});
 
 
 Route::get('/items', [ItemController::class, 'index']);
@@ -16,7 +19,7 @@ Route::post('/Positems', [ItemController::class, 'store']);
 Route::put('/items/{id}', [ItemController::class, 'update']);
 Route::delete('/items/{id}', [ItemController::class, 'destroy']);
 Route::get('/items/{id}', [ItemController::class, 'show']);
-
+Route::post('/login',[ItemController::class, 'login']);
 
 
 Route::get('/{any}', function () {

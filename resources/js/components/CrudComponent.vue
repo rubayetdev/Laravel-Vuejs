@@ -1,27 +1,14 @@
-<!--<script setup>-->
-
-<!--import {useRouter} from "vue-router";-->
-
-<!--const router = useRouter();-->
-
-<!--const gotoPage = () => {-->
-<!--    if (router) {-->
-<!--        router.push('/withoutData');-->
-<!--    } else {-->
-<!--        console.error('Router instance is not available');-->
-<!--    }-->
-<!--};-->
-
-<!--</script>-->
 <template>
     <div class="p-4 max-w-4xl mx-auto">
         <h1 class="text-xl font-bold mb-4">Insert Data</h1>
         <form @submit.prevent="createItem" class="space-y-4">
             <input type="text" v-model="newItem.name" placeholder="Enter name" required class="border p-2 w-full rounded"><br>
+            <input type="email" v-model="newItem.email" placeholder="Enter email" required class="border p-2 w-full rounded"><br>
+            <input type="password" v-model="newItem.password" placeholder="Enter password" required class="border p-2 w-full rounded"><br>
             <input type="submit" value="Create" class="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer w-full sm:w-auto">
         </form>
-        
-        
+
+
         <main>
 
             <router-view/>
@@ -38,6 +25,8 @@ export default {
         return {
             newItem: {
                 name: '',
+                email: '',
+                password: '',
             },
 
             allData:[]
@@ -68,7 +57,7 @@ export default {
                 this.$toast.error('Data Insert Failed');
             })
         },
-        
+
     },
 
 

@@ -11,8 +11,9 @@
 </head>
 <body class="bg-gray-100">
 <div id="app">
-    @vite('resources/js/app.js')
     <crud-component></crud-component>
+        @vite('resources/js/app.js')
+    <data-component></data-component>
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
 </body>

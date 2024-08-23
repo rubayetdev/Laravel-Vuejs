@@ -10,6 +10,8 @@
                 <tr>
                     <th class="px-4 py-2 text-left">Id</th>
                     <th class="px-4 py-2 text-left">Name</th>
+                    <th class="px-4 py-2 text-left">Email</th>
+                    <th class="px-4 py-2 text-left">Password</th>
                     <th class="px-4 py-2 text-left">Update</th>
                     <th class="px-4 py-2 text-left">Delete</th>
                 </tr>
@@ -18,6 +20,8 @@
                 <tr v-for="value in allData" :key="value.id" class="hover:bg-gray-100">
                     <td class="border px-4 py-2">{{ value.id }}</td>
                     <td class="border px-4 py-2">{{ value.name }}</td>
+                    <td class="border px-4 py-2">{{ value.email }}</td>
+                    <td class="border px-4 py-2">{{ value.password }}</td>
                     <td class="border px-4 py-2 text-center">
                     <router-link :to="{name: 'withData',params: {id:value.id}}">
                         <button class="bg-yellow-500 text-white px-4 py-1 rounded">Update</button>

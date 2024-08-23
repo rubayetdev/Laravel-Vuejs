@@ -5,13 +5,11 @@
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Your Id: {{ id }}</label>
                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                <input
-                    type="text"
-                    id="name"
-                    v-model="name"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter your name"
-                />
+                <input type="text" id="name" v-model="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name"/>
+                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                <input type="email" id="name" v-model="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name"/>
+                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                <input type="password" id="name" v-model="password" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name"/>
             </div>
             <button
                 type="submit"
@@ -28,6 +26,8 @@ export default {
         return {
             id: this.$route.params.id,
             name: '',
+            email: '',
+            password: '',
         };
     },
     mounted() {
@@ -40,6 +40,8 @@ export default {
                 .then(data => {
                     if (data.success) {
                         this.name = data.item.name;
+                        this.email = data.item.email;
+                        this.password = data.item.password;
                     } else {
                         alert(data.message);
                     }
