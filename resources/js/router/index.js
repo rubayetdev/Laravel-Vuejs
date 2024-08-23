@@ -4,6 +4,7 @@ import home from '../components/CrudComponent.vue'
 import dataPage from '../components/DataShow.vue';
 import notFound from '../components/ExampleComponent.vue'
 import withDataPage from '../components/withData.vue'
+import confirmModel from "@/components/ConfirmModel.vue";
 
 const routes =[
     {
@@ -20,6 +21,11 @@ const routes =[
         path:'/withData/:id',
         name: 'withData',
         component: withDataPage,
+    },
+    {
+        path:'/confirmModel/:id',
+        name: 'confirmModel',
+        component: confirmModel,
     },
     {
         path: '/:pathMatch(.*)*',

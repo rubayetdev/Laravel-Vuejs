@@ -24,42 +24,92 @@
                         </router-link>
                     </td>
                     <td class="border px-4 py-2 text-center">
-                        <button class="bg-red-500 text-white px-4 py-1 rounded">Delete</button>
+                        <button @click="openDeleteModal(value.id)" class="bg-red-500 text-white px-4 py-1 rounded">Delete</button>
                     </td>
                 </tr>
                 </tbody>
             </table>
         </div>
 
-
+        <confirmModel
+            v-if="showModal"
+            :isVisible="showModal"
+            title="Delete Item"
+            message="Are you sure you want to delete this item?"
+            @confirm="deleteItem"
+            @cancel="closeModal"
+        />
     </div>
 
     <router-view/>
 </template>
 
 <script>
-export default {
+import confirmModel from "@/components/ConfirmModel.vue";
+// export default {
+//
+//     data() {
+//         return {
+//             allData:[]
+//         };
+//     },
+//
+//     mounted() {
+//         console.log('Mounted');
+//         axios.get('/items').then(response=>{
+//
+//                 this.allData = response.data;
+//             }
+//         ).catch(error=>{
+//             console.log('Error');
+//         })
+//     },
+// }
 
+export default {
+    components: {
+        confirmModel,
+    },
     data() {
         return {
-            allData:[]
+            allData: [],
+            showModal: false,
+            itemToDelete: null,
         };
     },
-
     mounted() {
-        console.log('Mounted');
-        axios.get('/items').then(response=>{
-
+        axios.get('/items')
+            .then(response => {
                 this.allData = response.data;
-            }
-        ).catch(error=>{
-            console.log('Error');
-        })
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
     },
-
-
-
-}
+    methods: {
+        openDeleteModal(id) {
+            this.itemToDelete = id;
+            this.showModal = true;
+        },
+        closeModal() {
+            this.showModal = false;
+            this.itemToDelete = null;
+        },
+        deleteItem() {
+            axios.delete(`/items/${this.itemToDelete}`)
+                .then(response => {
+                    this.$toast.success('Item deleted successfully');
+                    this.allData = this.allData.filter(item => item.id !== this.itemToDelete);
+                    this.closeModal();
+                })
+                .catch(error => {
+                    console.error('Error deleting item:', error);
+                    this.$toast.error('Failed to delete item');
+                    this.closeModal();
+                });
+        },
+    },
+};
 </script>
 
 <style scoped>

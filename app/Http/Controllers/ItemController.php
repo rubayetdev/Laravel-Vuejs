@@ -43,7 +43,7 @@ class ItemController extends Controller
     {
         $item = Item::findOrFail($id);
         $item->update($request->all());
-        return $item;
+        return response()->json(['success' => true, 'item' => $item], 200);
     }
 
     public function destroy($id)
