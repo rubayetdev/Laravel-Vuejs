@@ -6,6 +6,7 @@ import notFound from '../components/ExampleComponent.vue'
 import withDataPage from '../components/withData.vue'
 import confirmModel from "@/components/ConfirmModel.vue";
 import loginModel from '../components/loginComponenet.vue'
+import dashboard from '../components/dashboard.vue'
 
 const routes =[
     {
@@ -32,6 +33,12 @@ const routes =[
         path:'/login',
         name: 'login',
         component: loginModel,
+    },
+    {
+        path: '/dashboard/:id',
+        name: 'dashboard',
+        component: dashboard,
+        props: true
     },
     {
         path: '/:pathMatch(.*)*',

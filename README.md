@@ -43,7 +43,7 @@ npm install
 ### Environment Setup
 Copy the .env.example file to create your .env file:
 ```bash
-cp .env.example .env
+cp .env .env
 ```
 ### Generate Application Key
 Generate an application key, which is used for various encryption services:

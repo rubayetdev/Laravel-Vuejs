@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Item;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class ItemController extends Controller
@@ -60,15 +61,32 @@ class ItemController extends Controller
 
     public function login(Request $request)
     {
-        $email = $request->input('email');
-        $password = $request->input('password');
+        $credentials = $request->only('email', 'password');
 
-        $item = User::where('email', $email)->first();
-
-
-        if ($email && Hash::check($password, $item->password))
-        {
-            return response()->json(['success' => true, 'item' => $item], 200);
+        if (!Auth::attempt($credentials)) {
+            return response()->json(['error' => 'Invalid Credentials'], 401);
         }
+
+        $user = Auth::user();
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json([
+            'status' => 'success',
+            'user' => $user,
+            'authorisation' => [
+                'token' => $token,
+                'type' => 'bearer',
+            ]
+        ]);
+    }
+
+    public function logout(Request $request)
+    {
+        // Revoke the user's current API token
+        $user = Auth::user();
+        $user->tokens()->delete();
+
+        // Return a response indicating the user has been logged out
+        return response()->json(['message' => 'Logged out successfully'], 200);
     }
 }

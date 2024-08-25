@@ -19,7 +19,8 @@ Route::post('/Positems', [ItemController::class, 'store']);
 Route::put('/items/{id}', [ItemController::class, 'update']);
 Route::delete('/items/{id}', [ItemController::class, 'destroy']);
 Route::get('/items/{id}', [ItemController::class, 'show']);
-Route::post('/login',[ItemController::class, 'login']);
+
+//Route::post('/login',[ItemController::class, 'login']);
 
 
 Route::get('/{any}', function () {
