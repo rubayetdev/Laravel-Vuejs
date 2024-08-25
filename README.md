@@ -1,6 +1,6 @@
 # Laravel & Vue.js Project
 
-This project is a web application built using Laravel and Vue.js, leveraging Laravel for the backend and Vue.js for the frontend. It provides a comprehensive foundation for creating dynamic, responsive, and feature-rich applications.
+This project is a web application built using Laravel and Vue.js. I am working on it. It is just a test project.
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ This project is a web application built using Laravel and Vue.js, leveraging Lar
 First, clone this repository to your local machine using Git:
 
 ```bash
-git clone https://github.com/your-username/your-repository.git
+git clone git@github.com:rubayetdev/Laravel-Vuejs.git
 ```
 cd your-repository
 
@@ -63,19 +63,14 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=your_database_name
-DB_USERNAME=your_database_user
-DB_PASSWORD=your_database_password
+DB_USERNAME=root
+DB_PASSWORD=
 ```
 
 # Add your other environment variables here
 
 ## Database Setup
 
-### Create the Database
-Create a new MySQL database for your application:
-```bash
-CREATE DATABASE your_database_name;
-```
 
 ### Run Migrations
 Migrate the database to create the required tables:
@@ -126,7 +121,7 @@ npm run dev
 * Authentication: Basic user authentication and registration features.
 * CRUD Operations: Fully functional Create, Read, Update, Delete operations.
 * Responsive Design: Mobile-first, responsive design using Tailwind CSS.
-* API Endpoints: RESTful API routes for AJAX requests.
+
 
 ## Contributing
 Contributions are welcome! If you want to contribute to this project, please fork the repository and submit a pull request.
