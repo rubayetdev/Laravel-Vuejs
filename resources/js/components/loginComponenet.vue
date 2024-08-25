@@ -61,6 +61,7 @@ const validateAndLogin = async () => {
 
             // Redirect to dashboard with user ID as a parameter
             window.location.href = `/dashboard/${user.id}`;
+            // this.$notify('Login Successfully')
         } else {
             console.error('Token not received');
             // Optionally show an error message to the user

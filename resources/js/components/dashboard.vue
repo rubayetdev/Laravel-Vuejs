@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Welcome to your Dashboard, User {{ id }}</h1>
+        <h1>Welcome to your Dashboard, User {{ username }}</h1>
         <!-- Add dashboard content here -->
     </div>
 </template>
@@ -11,7 +11,7 @@ export default {
     props: ['id'],
     mounted() {
         console.log('Dashboard loaded for user with ID:', this.id);
-        // You can fetch additional data based on the user ID if needed
+
     }
 }
 </script>

@@ -15,9 +15,7 @@
                 <a href="#" class="text-white hover:text-gray-300">Services</a>
             </li>
             <li v-if="!isLoggedIn">
-                <router-link to="/login">
-                    <a href="" class="text-white hover:text-gray-300">Login</a>
-                </router-link>
+                <router-link to="/login" class="text-white hover:text-gray-300">Login</router-link>
             </li>
             <li v-if="isLoggedIn">
                 <router-link to="/profile" class="text-white hover:text-gray-300">Profile</router-link>
@@ -34,34 +32,34 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import axios from 'axios';
 
-// Determine if the user is logged in
+
 const isLoggedIn = ref(false);
+const username = ref('');
 const router = useRouter();
 
-// Check login status on component mount
 onMounted(() => {
     const token = localStorage.getItem('token');
     isLoggedIn.value = !!token;
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     username.value = user.name || '';
 });
-// const homeLink = computed(() => {
-//     if (isLoggedIn.value) {
-//         const user = JSON.parse(localStorage.getItem('user') || '{}');
-//         return `/home/${user.id}`;
-//     }
-//     return '/home';
-// });
-// Logout function
+
 const logout = async () => {
     try {
         await axios.post('/api/logout');
         localStorage.removeItem('token');
         localStorage.removeItem('user');
+        isLoggedIn.value = false; // Ensure UI reflects logout status
+        username.value = '';
         router.push('/login');
+        // Uncomment this if using a notification library
+
     } catch (error) {
         console.error('Logout failed:', error);
+        // Uncomment this if using a notification library
+        // toast.error('Logout failed');
     }
 };
 </script>
